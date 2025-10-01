@@ -20,6 +20,7 @@
   <a href="#overview">Overview</a> •
   <a href="#prerequisites">Prerequisites</a> •
   <a href="#quick-start">Quick start</a> •
+  <a href="#dns-setup">DNS setup</a> •
   <a href="#using-with-your-app-containers">Use with your apps</a> •
   <a href="#docker-run-example-your-app-container">Docker run example</a> •
   <a href="#included-compose-services">Included services</a>
@@ -51,6 +52,17 @@ This stack exposes ports 80 and 443 and listens for containers on the `web` netw
 ## Using with your app containers
 <a id="using-with-your-app-containers"></a>
 Attach your containers to the same `web` network and set the environment variables below.
+
+## DNS setup
+<a id="dns-setup"></a>
+To route any subdomain of `example.com` through this proxy, create a wildcard DNS record pointing to this server's public IP.
+
+- Create an A (or AAAA) record for `*.example.com` to your server's IP address.
+- Optional: also point `example.com` to the same IP if you want the apex domain served.
+
+Notes:
+- A wildcard DNS record does not automatically create a wildcard TLS certificate. Certificates are issued per hostname unless you configure DNS-01 with a supported DNS provider.
+- If you don't want a wildcard, you can instead create individual A/AAAA records (e.g., `app1.example.com`, `app2.example.com`).
 
 ### Required/optional environment variables
 - **VIRTUAL_HOST**: Comma-separated hostnames to route to this container (e.g., `app.example.com`).

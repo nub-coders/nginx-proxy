@@ -26,7 +26,7 @@ services:
       - nginx-proxy
     environment:
       - NGINX_PROXY_CONTAINER=nginx-proxy
-      - DEFAULT_EMAIL=dev@nub-coder.tech
+      - DEFAULT_EMAIL=dev@nub-coder.tech #make sure to update this email
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./nginx/certs:/etc/nginx/certs
