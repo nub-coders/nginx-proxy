@@ -107,7 +107,6 @@ docker run -d \
 
 Notes:
 - Replace `example.com` and the email with your domain and contact.
-- You can use `-p 8080:80` instead of `--expose 80`; in that case `HOST_PORT` is usually unnecessary because the proxy detects the published port.
 
 ## Included compose services
 <a id="included-compose-services"></a>
