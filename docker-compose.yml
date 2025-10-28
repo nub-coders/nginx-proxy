@@ -15,6 +15,10 @@ services:
       - web
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
 
   letsencrypt:
     image: nginxproxy/acme-companion
