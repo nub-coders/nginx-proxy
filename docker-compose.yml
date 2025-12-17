@@ -43,4 +43,4 @@ services:
 
 networks:
   web:
-    external: true
+    driver: bridge
